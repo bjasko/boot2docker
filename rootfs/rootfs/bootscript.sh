@@ -102,12 +102,6 @@ fi
 log_msg "virtualbox drivers"
 /etc/rc.d/virtualbox
 
-log_msg "bootlocal.sh - allow local HD customisation"
-if [ -e $BOOT_DIR/bootlocal.sh ]; then
-    $BOOT_DIR/bootlocal.sh &
-    log_msg "after $BOOT_DIR/bootlocal.sh"
-fi
-
 . /usr/local/bin/install_green_apps
 
 log_msg "ldconfg after mounting apps"
@@ -116,4 +110,9 @@ log_msg "ldconfg after mounting apps"
 log_msg "launch Docker"
 /etc/rc.d/docker
 
+log_msg "bootlocal.sh - allow local HD customisation"
+if [ -e $BOOT_DIR/bootlocal.sh ]; then
+    $BOOT_DIR/bootlocal.sh &
+    log_msg "after $BOOT_DIR/bootlocal.sh"
+fi
 
