@@ -24,6 +24,7 @@ fi
 mkdir -p /home
 mkdir -p /opt
 /usr/local/sbin/zpool import green >> $LOG_FILE 2>&1
+/usr/local/sbin/zpool import backup >> $LOG_FILE 2>&
 
 /sbin/swapon  /dev/zvol/green/swap >> $LOG_FILE
 /sbin/swapon -a >> $LOG_FILE
