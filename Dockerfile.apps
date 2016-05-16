@@ -199,9 +199,10 @@ RUN cd /opt/flocker &&\
 RUN  cd /opt/apps/green/bin &&  curl -LO https://raw.githubusercontent.com/jpetazzo/pipework/master/pipework &&\
      chmod +x pipework
 
-RUN  apt-get update -y && apt-get install -y bridge-utils openvswitch-switch &&\
+RUN  apt-get update -y && apt-get install -y openvpn bridge-utils openvswitch-switch &&\
      cp /sbin/brctl /opt/apps/green/bin/ &&\
      cp `which ovs-vsctl` /opt/apps/green/bin/ &&\
+     cp `which openvpn` /opt/apps/green/bin/ &&\
      cp `which truncate` /opt/apps/green/bin/
 
 
